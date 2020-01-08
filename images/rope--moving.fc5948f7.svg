@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="160px" viewBox="0 0 100 160" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="CordWrapper" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Cord" stroke="#FFFFFF" stroke-width="3" transform="translate(0)">
+      <path d="M50,-1.16573418e-14 C50,16.015625 80,25 80,50 C80,75 20,85 20,110 C20,135 50,132.400391 50,160" id="CordPath"></path>
+    </g>
+  </g>
+</svg>

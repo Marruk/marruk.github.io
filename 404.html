@@ -1,0 +1,43 @@
+<!doctype html> <html> <head> <meta charset="utf-8"> <title>Hello, I'm Mark</title> <base href="/"> <meta name="description" content="I make stuff."> <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"> <meta name="theme-color" content="#6B2E82"> <!-- Critical CSS --> <style>body {
+        font-family: 'Lato', 'Roboto', sans-serif;
+      }
+
+      .loading {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        background: linear-gradient(-1deg, #6B2E82, #2B2141);
+        overflow: hidden;
+      }
+
+      .loading__content {
+        color: #f0f5fc;
+      }
+
+      .intro__title {
+        text-transform: uppercase;
+        font-weight: 400;
+        line-height: 1;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 15vh;
+      }
+
+      .intro__title--main {
+        font-size: 3rem;
+        margin-top: calc(50vh - 1.5rem);
+      }
+
+      .inner {
+        max-width: 60rem;
+        padding: 0 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
+      }</style> <link rel="stylesheet" href="styles/vendor.65b621fb.css"> <link rel="stylesheet" href="styles/main.e47248c3.css"> </head> <body ng-app="helloImMarkApp"> <div id="loading" class="loading"> <div class="loading__content inner"> <div class="intro__title intro__title--main"> Hello! </div> </div> </div> <main class="content" ui-view></main> <script>!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+      (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+      r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+      }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29680649-1');
+      ga('send', 'pageview');</script> <script src="scripts/vendor.202d28e0.js"></script> <script src="scripts/scripts.e1447b98.js"></script> </body> </html>

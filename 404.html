@@ -1,43 +1,132 @@
-<!doctype html> <html> <head> <meta charset="utf-8"> <title>Hello, I'm Mark</title> <base href="/"> <meta name="description" content="I make stuff."> <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"> <meta name="theme-color" content="#6B2E82"> <!-- Critical CSS --> <style>body {
-        font-family: 'Lato', 'Roboto', sans-serif;
-      }
+<!doctype html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <title>Hello, I'm Mark Montvai</title>
+  <meta name="description" content="I make stuff">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#4A148C">
+  <meta name="msapplication-TileColor" content="#4a148c">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#4A148C">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:wght@400;600&display=swap" media="all"/>
+  <style>
+    :root {
+      --baseGridSize: 8px;
+      --shortcutsHeight: 14rem;
+    }
 
-      .loading {
-        position: fixed;
-        height: 100vh;
-        width: 100vw;
-        top: 0;
-        background: linear-gradient(-1deg, #6B2E82, #2B2141);
-        overflow: hidden;
+    @media screen and (max-width: 340px) {
+      :root {
+        --baseGridSize: 7px;
       }
+    }
 
-      .loading__content {
-        color: #f0f5fc;
-      }
+    html {
+      font-size: var(--baseGridSize);
+    }
 
-      .intro__title {
-        text-transform: uppercase;
-        font-weight: 400;
-        line-height: 1;
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-top: 15vh;
-      }
+    body {
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1.4;
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: #263238;
+    }
 
-      .intro__title--main {
-        font-size: 3rem;
-        margin-top: calc(50vh - 1.5rem);
-      }
+    .splash-screen {
+      color: #ffffff;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      opacity: 1;
+      background-color: #170728;
+      background-image: linear-gradient(to bottom right, #290638, #170728);
 
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    .splash-screen + app-root {
+      display: block;
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      overflow: hidden;
+      clip-path: inset(calc(100vh + var(--shortcutsHeight)) 0 0 0);
+      will-change: clip-path;
+      transition: clip-path .5s cubic-bezier(.75, 0, .25, 1);
+      transition-delay: .5s;
+    }
+
+    app-root > * {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .splash-screen.is-done + app-root {
+      clip-path: inset(var(--shortcutsHeight) 0 0 0);
+      background-color: #f0f5fc;
+    }
+
+    .inner {
+      width: 100%;
+      max-width: 90rem;
+      margin: 0 auto;
+      padding: 0 3rem;
+      box-sizing: border-box;
+    }
+
+    @media screen and (max-width: 512px) {
       .inner {
-        max-width: 60rem;
-        padding: 0 1.5rem;
-        margin-left: auto;
-        margin-right: auto;
-      }</style> <link rel="stylesheet" href="styles/vendor.65b621fb.css"> <link rel="stylesheet" href="styles/main.e47248c3.css"> </head> <body ng-app="helloImMarkApp"> <div id="loading" class="loading"> <div class="loading__content inner"> <div class="intro__title intro__title--main"> Hello! </div> </div> </div> <main class="content" ui-view></main> <script>!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-      (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-      r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-      }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
 
-      ga('create', 'UA-29680649-1');
-      ga('send', 'pageview');</script> <script src="scripts/vendor.202d28e0.js"></script> <script src="scripts/scripts.e1447b98.js"></script> </body> </html>
+    .title {
+      font-size: 2.25em;
+      font-weight: 600;
+      letter-spacing: -1px;
+      line-height: 0;
+    }
+
+    .visually-hidden {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+  </style>
+<link rel="stylesheet" href="styles.3f4be7206967d988a090.css"></head>
+<body>
+  <div id="splashScreen" class="splash-screen">
+    <div class="inner">
+      <div class="title title--main">
+        Hello!
+      </div>
+    </div>
+  </div>
+  <app-root id="appRoot"></app-root>
+<script src="runtime.8c748208e74172ed09fa.js" defer></script><script src="polyfills.35a5ca1855eb057f016a.js" defer></script><script src="main.2fa04d35657e0d51fe2f.js" defer></script></body>
+</html>

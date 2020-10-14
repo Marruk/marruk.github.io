@@ -54,6 +54,8 @@
       left: 0;
       opacity: 1;
       background-color: #170728;
+      background-image: -webkit-gradient(linear, left top, right bottom, from(#290638), to(#170728));
+      background-image: -o-linear-gradient(top left, #290638, #170728);
       background-image: linear-gradient(to bottom right, #290638, #170728);
 
       display: -webkit-box;
@@ -67,24 +69,54 @@
       justify-content: center;
     }
 
+    .splash-screen__loading {
+      display: inline-block;
+      width: 3rem;
+      vertical-align: baseline;
+      margin-left: 4rem;
+      position: absolute;
+      opacity: 0;
+      -webkit-animation: appear .3s ease-out;
+              animation: appear .3s ease-out;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+      -webkit-animation-delay: 1s;
+              animation-delay: 1s;
+    }
+
+    .splash-screen__loading > svg {
+      max-width: 100%;
+      -webkit-transform: translate3d(0, -36%, 0);
+              transform: translate3d(0, -36%, 0);
+    }
+
     .splash-screen + app-root {
       display: block;
       position: relative;
       z-index: 1;
       height: 100vh;
       overflow: hidden;
-      clip-path: inset(calc(100vh + var(--shortcutsHeight)) 0 0 0);
+      -webkit-clip-path: inset(calc(100vh + var(--shortcutsHeight)) 0 0 0);
+              clip-path: inset(calc(100vh + var(--shortcutsHeight)) 0 0 0);
       will-change: clip-path;
+      -webkit-transition: -webkit-clip-path .5s cubic-bezier(.75, 0, .25, 1);
+      transition: -webkit-clip-path .5s cubic-bezier(.75, 0, .25, 1);
+      -o-transition: clip-path .5s cubic-bezier(.75, 0, .25, 1);
       transition: clip-path .5s cubic-bezier(.75, 0, .25, 1);
-      transition-delay: .5s;
+      transition: clip-path .5s cubic-bezier(.75, 0, .25, 1), -webkit-clip-path .5s cubic-bezier(.75, 0, .25, 1);
+      -webkit-transition-delay: .5s;
+           -o-transition-delay: .5s;
+              transition-delay: .5s;
     }
 
     app-root > * {
-      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
     }
 
     .splash-screen.is-done + app-root {
-      clip-path: inset(var(--shortcutsHeight) 0 0 0);
+      -webkit-clip-path: inset(0 0 0 0);
+              clip-path: inset(0 0 0 0);
       background-color: #f0f5fc;
     }
 
@@ -93,7 +125,8 @@
       max-width: 90rem;
       margin: 0 auto;
       padding: 0 3rem;
-      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
     }
 
     @media screen and (max-width: 512px) {
@@ -121,16 +154,51 @@
       position: absolute;
       width: 1px;
     }
+
+    @-webkit-keyframes appear {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   </style>
-<link rel="stylesheet" href="styles.338d8ab9ca067f38f3d7.css"></head>
+<link rel="stylesheet" href="styles.49cdf1a705114204cf64.css"></head>
 <body>
   <div id="splashScreen" class="splash-screen">
     <div class="inner">
       <div class="title title--main">
         Hello!
+        <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->
+        <span class="splash-screen__loading">
+          <svg width="120" height="30" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" fill="#90A4AE">
+            <circle cx="15" cy="15" r="15">
+              <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"/>
+              <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="60" cy="15" r="9" fill-opacity="0.3">
+              <animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite"/>
+              <animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="105" cy="15" r="15">
+              <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"/>
+              <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </span>
       </div>
     </div>
   </div>
   <app-root id="appRoot"></app-root>
-<script src="runtime.69c96e57c88e96b83821.js" defer></script><script src="polyfills.35a5ca1855eb057f016a.js" defer></script><script src="main.e5226bf6e0a7e5a56b9f.js" defer></script></body>
+<script src="runtime.d1c2e12a3249a8f1872f.js" defer></script><script src="polyfills.35a5ca1855eb057f016a.js" defer></script><script src="main.f8634aead31307343bf1.js" defer></script></body>
 </html>

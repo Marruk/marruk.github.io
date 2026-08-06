@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /files/
+Disallow: /fonts/
+Disallow: /favicon/
+Disallow: /images/
+Allow: /images/markmetznbakkes.png
+Allow: /images/markmetznkleinebakkes.png
